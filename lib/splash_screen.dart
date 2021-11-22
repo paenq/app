@@ -49,7 +49,7 @@ class Authentication extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        canvasColor: Color(0xFF293991),
+        canvasColor: Color(0xFF4E5CA3),
       ),
       home: AuthenticationScreen(),
       debugShowCheckedModeBanner: false,
