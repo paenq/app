@@ -30,7 +30,6 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // logo
             Image.asset('assets/images/Bank.png', height: 120),
             SizedBox(height: 20),
             CircularProgressIndicator(
