@@ -4,7 +4,6 @@ import 'dart:async';
 
 import 'package:app/authentication_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:app/authentication_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -17,20 +16,24 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 5), () {
-      Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (_) => Authentication()));
+    Timer(Duration(seconds: 3), () {
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(
+          builder: (_) => AuthenticationScreen(),
+        ),
+      );
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green[700],
+      backgroundColor: Color(0xFF202C38),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/images/Bank.png', height: 120),
+            Image.asset('assets/images/splash_logo.png'),
             SizedBox(height: 20),
             CircularProgressIndicator(
               valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
@@ -38,21 +41,6 @@ class _SplashScreenState extends State<SplashScreen> {
           ],
         ),
       ),
-    );
-  }
-}
-
-class Authentication extends StatelessWidget {
-  const Authentication({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        canvasColor: Color(0xFF4E5CA3),
-      ),
-      home: AuthenticationScreen(),
-      debugShowCheckedModeBanner: false,
     );
   }
 }
